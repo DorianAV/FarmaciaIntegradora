@@ -9,6 +9,7 @@ require_once('p-superior.php');?>
             <div class="p-5"></div>
             <div class="col-12 Mensaje text-center">
                 <h1>Visitanos</h1>
+                <h1>Ya agarra</h1>
                 <p>Somos una Gran opcion para que disfrutes de una gran comida a cualquier hora del dia</p>
             </div>
             <div class="col-12 col-md-6">
