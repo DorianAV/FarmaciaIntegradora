@@ -4,7 +4,7 @@ session_start();
 require_once('p-superior.php');?>
     <main class="container">
         <div class="row">
-            <h1>Hola</h1>
+            <h1>Hola ajaja</h1>
             <div class="p-5"></div>
             <div class="col-12 Mensaje text-center">
                 <h1>Visitanos</h1>
