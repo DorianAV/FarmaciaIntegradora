@@ -20,8 +20,11 @@ $usuario = $_SESSION['usuario'];
     <title>Bienvenido</title>
 </head>
 <body>
+<?php
+echo $_SESSION['rol'];
+
+?>
 <h1>Bienvenido, <?php echo $usuario; ?>!</h1>
 <p>Has iniciado sesión exitosamente.</p>
-<p><a href="logout.php">Cerrar sesión</a></p>
 </body>
 </html>

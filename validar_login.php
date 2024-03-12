@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if(isset($_POST['usuario']) && isset($_POST['contrasena'])) {
+if (isset($_POST['usuario']) && isset($_POST['contrasena'])) {
     $usuario = $_POST['usuario'];
     $contrasena = $_POST['contrasena'];
 
@@ -10,17 +10,14 @@ if(isset($_POST['usuario']) && isset($_POST['contrasena'])) {
     $query = "SELECT * FROM usuarios WHERE CorreoUsu='$usuario' AND ContraUsu='$contrasena'";
     $result = mysqli_query($con, $query);
 
-    if(mysqli_num_rows($result) == 1) {
+    if (mysqli_num_rows($result) == 1) {
         $row = mysqli_fetch_assoc($result);
-        $_SESSION['usuario'] = $usuario;
+        $_SESSION['usuario'] = $row['CorreoUsu'];
         $_SESSION['loggedin'] = true;
-        $_SESSION['rol'] = $usuario['rol'];
-        // Aquí puedes redirigir al usuario a otra página después del inicio de sesión exitoso
-        if ($usuario['rol'] == 'admin') {
-            header('location: editar-menu.php');
-        } else {
-            header('location: index.php');
-        }
+        $_SESSION['rol'] = trim($row['RolUsu']);
+
+        header('location: admin-menu.php');
+
         exit();
     } else {
         // Si las credenciales son incorrectas, puedes redirigir al usuario a la página de inicio de sesión con un mensaje de error
