@@ -13,8 +13,14 @@ if(isset($_POST['usuario']) && isset($_POST['contrasena'])) {
     if(mysqli_num_rows($result) == 1) {
         $row = mysqli_fetch_assoc($result);
         $_SESSION['usuario'] = $usuario;
+        $_SESSION['loggedin'] = true;
+        $_SESSION['rol'] = $usuario['rol'];
         // Aquí puedes redirigir al usuario a otra página después del inicio de sesión exitoso
-        header("Location: bienvenido.php");
+        if ($usuario['rol'] == 'admin') {
+            header('location: editar-menu.php');
+        } else {
+            header('location: index.php');
+        }
         exit();
     } else {
         // Si las credenciales son incorrectas, puedes redirigir al usuario a la página de inicio de sesión con un mensaje de error
