@@ -58,7 +58,7 @@
 <body>
 <div class="login-container">
     <h2>Iniciar Sesión</h2>
-    <form action="procesar_login.php" method="POST">
+    <form action="validar_login.php" method="POST">
         <input type="text" name="usuario" placeholder="Usuario" required>
         <br>
         <input type="password" name="contrasena" placeholder="Contraseña" required>
