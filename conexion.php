@@ -5,6 +5,6 @@ if(!$con){
     echo"Error en la conexion de la base de datos";
     exit;
 }
-echo "Hola dorian";
+echo "Ya quedó";
 
 ?>
